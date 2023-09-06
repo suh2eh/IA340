@@ -55,5 +55,3 @@ ALTER TABLE enroll
     
 
 -- Create Indexes
-CREATE INDEX Index ON course (room);
-CREATE INDEX Index ON enroll (s_email);
