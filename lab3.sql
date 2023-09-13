@@ -34,8 +34,23 @@ values('s1@jmu.edu','c1'),
 	  ('s3@jmu.edu','c3')
 
 --Q2.5
+--You need to modify the professor table first, as inputing the new professor's email into the course before adding the professor's email to the professor table will result in an error. 
 
+insert into professor(p_email,p_name,office)
+values('p3@jmu.edu','p3','o3')
 
+insert into course(c_number,c_name,room,p_email)
+values('c4','facebook','r1','p3@jmu.edu')
+
+--Q2.6
+--You need to update the professor from the course table first, as a constraint prevents one from deleting the professor directly from the professor table as long as that professor is referenced in another table.  
+
+update course
+set p_email = 'p3@jmu.edu'
+where p_email = 'p1@jmu.edu'
+
+delete from professor
+where p_email ='p1@jmu.edu'
 
 
 
