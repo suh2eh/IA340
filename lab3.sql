@@ -52,6 +52,17 @@ where p_email = 'p1@jmu.edu'
 delete from professor
 where p_email ='p1@jmu.edu'
 
+--Q2.7
+select * from enroll
+--Q2.8
+
+--Q2.9
+select professor.p_name,
+		course.c_name
+from professor
+inner join course
+on professor.p_email = course.p_email 
+
 
 
 
