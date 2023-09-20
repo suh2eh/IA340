@@ -69,6 +69,22 @@ from professor
 inner join course
 on professor.p_email = course.p_email 
 
+--Q2.10
+
+select professor.p_name, count(course.c_number) as num_courses_taught
+from professor
+inner join course on professor.p_email = course.p_email
+group by professor.p_name
+order by num_courses_taught desc
+limit 1
+	
+--Would the following code be considered good  as well? The only difference was that I used p_email instead of p_name.
+select p_email ,count(*) as num_courses
+from course
+group by p_email
+order by num_courses desc
+limit 1
+
 
 
 
